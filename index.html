@@ -19,9 +19,92 @@
       color: #ebdcd5;
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       padding: 24px 12px;
+      overflow-x: hidden;
     }
     
+    /* Cover / Envelope Screen */
+    .cover-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #120709;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+      padding: 20px;
+    }
+    
+    .cover-card {
+      max-width: 420px;
+      width: 100%;
+      background: linear-gradient(145deg, #2b0b14, #18060a);
+      border: 1px solid #5e182b;
+      border-radius: 16px;
+      padding: 40px 24px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(136, 14, 79, 0.25);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .cover-card p.tagline {
+      font-family: 'Alex Brush', cursive;
+      font-size: 2.3rem;
+      color: #e6b89c;
+      margin-bottom: 8px;
+    }
+
+    .cover-card h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      color: #f7e7e8;
+      text-transform: uppercase;
+    }
+
+    .cover-card p.subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      color: #c97a8e;
+      text-transform: uppercase;
+      margin-top: 4px;
+      margin-bottom: 30px;
+    }
+
+    .open-btn {
+      background: linear-gradient(135deg, #8c2841, #5e182b);
+      color: #f7e7e8;
+      border: 1px solid #c97a8e;
+      padding: 12px 36px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .open-btn:hover {
+      transform: scale(1.05);
+      background: #a83250;
+      box-shadow: 0 0 15px rgba(201, 122, 142, 0.4);
+    }
+
+    /* Container Utama */
     .container {
       max-width: 480px;
       width: 100%;
@@ -31,6 +114,20 @@
       border: 1px solid #4a1525;
       overflow: hidden;
       position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+    }
+
+    /* Kelas saat cover terbuka */
+    .cover-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Cinematic Header Bar */
@@ -42,17 +139,13 @@
       position: relative;
     }
 
-    /* Font Tulisan Tangan 'p.s. i love u' */
     .header p.tagline {
       font-family: 'Alex Brush', cursive;
       font-size: 2.2rem;
       color: #e6b89c;
       margin-bottom: 2px;
-      text-transform: none;
-      letter-spacing: 1px;
     }
 
-    /* Judul Utama Cinematic */
     .header h1 {
       font-family: 'Cinzel', serif;
       font-size: 2.2rem;
@@ -72,7 +165,7 @@
       margin-top: 4px;
     }
 
-    /* Frame Foto Polaroid Cinematic */
+    /* Frame Foto Polaroid */
     .photo-gallery {
       display: flex;
       justify-content: center;
@@ -87,7 +180,6 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
       transform: rotate(-2.5deg);
       width: 120px;
-      transition: transform 0.3s ease;
     }
     .polaroid:nth-child(2) {
       transform: rotate(3deg);
@@ -100,7 +192,7 @@
       border-radius: 2px;
     }
 
-    /* Tombol Musik Style Film Minimalis */
+    /* Tombol Musik */
     .music-btn {
       margin-top: 18px;
       background: transparent;
@@ -119,13 +211,12 @@
       background: #5e182b;
       color: #fff;
       border-color: #c97a8e;
-      box-shadow: 0 0 12px rgba(201, 122, 142, 0.3);
     }
 
     /* List Alasan */
     .reasons-list {
       padding: 25px 22px;
-      max-height: 62vh;
+      max-height: 60vh;
       overflow-y: auto;
       background: #19090f;
     }
@@ -144,7 +235,7 @@
       letter-spacing: 1px;
     }
 
-    /* Surat Penutup Cinematic */
+    /* Surat Penutup */
     .letter-section {
       background: linear-gradient(180deg, #240b13 0%, #14050a 100%);
       border-top: 1px solid #4a1525;
@@ -179,13 +270,24 @@
 </head>
 <body>
 
-  <div class="container">
+  <!-- Halaman Cover Depan -->
+  <div class="cover-overlay" id="coverOverlay">
+    <div class="cover-card">
+      <p class="tagline">p.s. i love u</p>
+      <h1>600 Reasons</h1>
+      <p class="subtitle">Why I Love You</p>
+      <button class="open-btn" onclick="openLetter()">OPEN</button>
+    </div>
+  </div>
+
+  <!-- Halaman Utama Web -->
+  <div class="container" id="mainContainer">
     <div class="header">
       <p class="tagline">p.s. i love u</p>
       <h1>600 Reasons</h1>
       <p class="subtitle">Why I Love You</p>
       
-      <!-- Tempat Foto Polaroid (Ganti src gambar di bawah dengan foto kalian) -->
+      <!-- Tempat Foto Polaroid -->
       <div class="photo-gallery">
         <div class="polaroid">
           <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Film Photo 1" />
@@ -195,7 +297,7 @@
         </div>
       </div>
 
-      <button class="music-btn" onclick="toggleMusic()">TAP TO PLAY MUSIC 🎵</button>
+      <button class="music-btn" onclick="toggleMusic()">TAP TO PAUSE MUSIC ⏸️</button>
       <audio id="bg-music" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
       </audio>
@@ -268,13 +370,28 @@
       container.appendChild(item);
     }
 
+    // Fungsi Transisi Buka Cover
+    function openLetter() {
+      const cover = document.getElementById("coverOverlay");
+      const main = document.getElementById("mainContainer");
+      const music = document.getElementById("bg-music");
+
+      cover.classList.add("hidden");
+      main.classList.add("visible");
+      
+      // Putar musik otomatis saat dibuka
+      music.play().catch(() => {
+        // Handle jika browser memblokir autoplay
+      });
+    }
+
     // Toggle Music Player
     function toggleMusic() {
       const music = document.getElementById("bg-music");
       const btn = document.querySelector(".music-btn");
       if (music.paused) {
         music.play();
-        btn.innerText = "PAUSE MUSIC ⏸️";
+        btn.innerText = "TAP TO PAUSE MUSIC ⏸️";
       } else {
         music.pause();
         btn.innerText = "TAP TO PLAY MUSIC 🎵";
