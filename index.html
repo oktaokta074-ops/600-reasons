@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>600 Reasons Why I Love You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -58,11 +58,12 @@
       50% { transform: translateY(-8px); }
     }
 
+    /* Font Baru 'Great Vibes' untuk p.s. i love u */
     .cover-card p.tagline {
-      font-family: 'Alex Brush', cursive;
-      font-size: 2.3rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
       color: #e6b89c;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .cover-card h1 {
@@ -140,8 +141,8 @@
     }
 
     .header p.tagline {
-      font-family: 'Alex Brush', cursive;
-      font-size: 2.2rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
       color: #e6b89c;
       margin-bottom: 2px;
     }
@@ -370,7 +371,7 @@
       container.appendChild(item);
     }
 
-    // Fungsi Transisi Buka Cover
+    // Transisi Buka Cover
     function openLetter() {
       const cover = document.getElementById("coverOverlay");
       const main = document.getElementById("mainContainer");
@@ -379,13 +380,10 @@
       cover.classList.add("hidden");
       main.classList.add("visible");
       
-      // Putar musik otomatis saat dibuka
-      music.play().catch(() => {
-        // Handle jika browser memblokir autoplay
-      });
+      music.play().catch(() => {});
     }
 
-    // Toggle Music Player
+    // Toggle Music
     function toggleMusic() {
       const music = document.getElementById("bg-music");
       const btn = document.querySelector(".music-btn");
