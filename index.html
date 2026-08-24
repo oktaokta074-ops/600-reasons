@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>600 Reasons Why I Love You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <title>P.S. I Love You - 600 Reasons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,11 +12,12 @@
       padding: 0;
     }
     body {
-      background-color: #120709;
-      background-image: radial-gradient(#38121a 1px, transparent 0);
-      background-size: 24px 24px;
-      font-family: 'Cormorant Garamond', serif;
-      color: #ebdcd5;
+      background-color: #dedcd8;
+      background-image: radial-gradient(#bcba35 0.5px, transparent 0.5px), radial-gradient(#111111 0.5px, #dedcd8 0.5px);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      font-family: 'Montserrat', sans-serif;
+      color: #1a1a1a;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -25,14 +26,14 @@
       overflow-x: hidden;
     }
     
-    /* Cover Screen */
+    /* Cover Screen (Album Aesthetic) */
     .cover-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: #120709;
+      background: #e8e6e1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -42,81 +43,76 @@
     }
     
     .cover-card {
-      max-width: 420px;
+      max-width: 380px;
       width: 100%;
-      background: linear-gradient(145deg, #2b0b14, #18060a);
-      border: 1px solid #5e182b;
-      border-radius: 16px;
-      padding: 40px 24px;
+      background: #f7f6f2;
+      border: 1px solid #d0ceca;
+      border-radius: 8px;
+      padding: 45px 30px;
       text-align: center;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(136, 14, 79, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       animation: float 4s ease-in-out infinite;
+      position: relative;
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-6px); }
     }
 
-    /* Font 'Caveat' Kasual & Cute untuk p.s. i love u */
-    .cover-card p.tagline {
-      font-family: 'Caveat', cursive;
-      font-size: 2.4rem;
-      color: #e6b89c;
-      margin-bottom: -5px;
-      text-transform: lowercase;
-      transform: rotate(-3deg);
-      display: inline-block;
+    /* Handwritten Title ala Paul Partohap Cover */
+    .album-title-box {
+      font-family: 'Gochi Hand', cursive;
+      font-size: 3rem;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 25px;
+      text-align: center;
     }
 
-    .cover-card h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.2rem;
-      letter-spacing: 3px;
-      color: #f7e7e8;
-      text-transform: uppercase;
-      margin-top: 10px;
+    .heart-doodle {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 8px;
+      transform: rotate(-10deg);
     }
 
     .cover-card p.subtitle {
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
-      letter-spacing: 4px;
-      color: #c97a8e;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: #666;
       text-transform: uppercase;
-      margin-top: 4px;
       margin-bottom: 30px;
     }
 
     .open-btn {
-      background: linear-gradient(135deg, #8c2841, #5e182b);
-      color: #f7e7e8;
-      border: 1px solid #c97a8e;
+      background: #1a1a1a;
+      color: #f7f6f2;
+      border: none;
       padding: 12px 36px;
       border-radius: 30px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease;
     }
 
     .open-btn:hover {
       transform: scale(1.05);
-      background: #a83250;
-      box-shadow: 0 0 15px rgba(201, 122, 142, 0.4);
+      background: #333;
     }
 
     /* Container Utama */
     .container {
-      max-width: 480px;
+      max-width: 450px;
       width: 100%;
-      background: #1c0a10;
-      border-radius: 12px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(163, 31, 62, 0.2);
-      border: 1px solid #4a1525;
+      background: #f7f6f2;
+      border-radius: 8px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      border: 1px solid #d0ceca;
       overflow: hidden;
       position: relative;
       opacity: 0;
@@ -136,142 +132,106 @@
 
     /* Header Bar */
     .header {
-      background: linear-gradient(180deg, #380a18 0%, #1c0a10 100%);
+      background: #f0eee8;
       padding: 35px 20px 25px;
       text-align: center;
-      border-bottom: 1px solid #5e182b;
+      border-bottom: 1px solid #e0ded8;
       position: relative;
     }
 
-    .header p.tagline {
-      font-family: 'Caveat', cursive;
-      font-size: 2.4rem;
-      color: #e6b89c;
-      margin-bottom: -5px;
-      text-transform: lowercase;
-      transform: rotate(-3deg);
-      display: inline-block;
-    }
-
-    .header h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.2rem;
-      letter-spacing: 3px;
-      color: #f7e7e8;
-      text-transform: uppercase;
-      font-weight: 600;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      margin-top: 10px;
-    }
-
-    .header p.subtitle {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      letter-spacing: 4px;
-      color: #c97a8e;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* Frame Foto Polaroid */
+    /* Frame Foto Grayscale Polaroid */
     .photo-gallery {
       display: flex;
       justify-content: center;
       gap: 16px;
-      margin: 25px 0 15px;
+      margin: 20px 0 15px;
     }
     .polaroid {
-      background: #120709;
-      padding: 8px 8px 18px 8px;
-      border-radius: 4px;
-      border: 1px solid #4a1525;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-      transform: rotate(-2.5deg);
-      width: 120px;
+      background: #ffffff;
+      padding: 8px 8px 20px 8px;
+      border-radius: 2px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+      transform: rotate(-2deg);
+      width: 125px;
     }
     .polaroid:nth-child(2) {
-      transform: rotate(3deg);
+      transform: rotate(2.5deg);
     }
     .polaroid img {
       width: 100%;
       height: 110px;
       object-fit: cover;
-      filter: sepia(0.15) contrast(1.05);
-      border-radius: 2px;
+      filter: grayscale(100%) contrast(1.1); /* Effect Hitam Putih Klasik */
     }
 
-    /* Tombol Musik */
+    /* Tombol Musik Minimalis */
     .music-btn {
-      margin-top: 18px;
+      margin-top: 15px;
       background: transparent;
-      color: #e0b0b8;
-      border: 1px solid #8c2841;
-      padding: 10px 22px;
+      color: #333;
+      border: 1px solid #1a1a1a;
+      padding: 8px 18px;
       border-radius: 30px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.3s ease;
     }
     .music-btn:hover {
-      background: #5e182b;
+      background: #1a1a1a;
       color: #fff;
-      border-color: #c97a8e;
     }
 
     /* List Alasan */
     .reasons-list {
-      padding: 25px 22px;
-      max-height: 60vh;
+      padding: 25px 25px;
+      max-height: 55vh;
       overflow-y: auto;
-      background: #19090f;
+      background: #f7f6f2;
     }
     .reason-item {
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      line-height: 1.6;
       padding: 12px 0;
-      border-bottom: 1px solid #33111b;
-      color: #ebdcd5;
+      border-bottom: 1px solid #e8e6e1;
+      color: #2b2b2b;
     }
     .reason-item strong {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      color: #d4a373;
+      font-family: 'Gochi Hand', cursive;
+      font-size: 1.2rem;
+      color: #1a1a1a;
       margin-right: 8px;
-      letter-spacing: 1px;
     }
 
     /* Surat Penutup */
     .letter-section {
-      background: linear-gradient(180deg, #240b13 0%, #14050a 100%);
-      border-top: 1px solid #4a1525;
-      padding: 30px 22px;
+      background: #eeece6;
+      border-top: 1px solid #e0ded8;
+      padding: 25px 22px;
       text-align: center;
     }
     .letter-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      color: #d4a373;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      font-family: 'Gochi Hand', cursive;
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      margin-bottom: 8px;
     }
     .letter-body {
-      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #444;
       font-style: italic;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #f7e7e8;
     }
 
-    /* Scrollbar */
+    /* Scrollbar Minimalis */
     .reasons-list::-webkit-scrollbar {
-      width: 5px;
+      width: 4px;
     }
     .reasons-list::-webkit-scrollbar-thumb {
-      background: #5e182b;
+      background: #ccc;
       border-radius: 10px;
     }
   </style>
@@ -281,9 +241,11 @@
   <!-- Halaman Cover Depan -->
   <div class="cover-overlay" id="coverOverlay">
     <div class="cover-card">
-      <p class="tagline">p.s. i love u</p>
-      <h1>600 Reasons</h1>
-      <p class="subtitle">Why I Love You</p>
+      <div class="album-title-box">
+        <span class="heart-doodle">🖤</span>
+        P.S.<br>I<br>LOVE<br>YOU
+      </div>
+      <p class="subtitle">600 Reasons Why</p>
       <button class="open-btn" onclick="openLetter()">OPEN</button>
     </div>
   </div>
@@ -291,11 +253,11 @@
   <!-- Halaman Utama Web -->
   <div class="container" id="mainContainer">
     <div class="header">
-      <p class="tagline">p.s. i love u</p>
-      <h1>600 Reasons</h1>
-      <p class="subtitle">Why I Love You</p>
+      <div class="album-title-box" style="font-size: 2.2rem; margin-bottom: 10px;">
+        P.S. I LOVE YOU
+      </div>
       
-      <!-- Tempat Foto Polaroid -->
+      <!-- Tempat Foto Polaroid Grayscale -->
       <div class="photo-gallery">
         <div class="polaroid">
           <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Film Photo 1" />
