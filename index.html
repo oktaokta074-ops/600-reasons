@@ -58,7 +58,6 @@
       50% { transform: translateY(-8px); }
     }
 
-    /* Font 'Caveat' Kasual & Cute untuk p.s. i love u */
     .cover-card p.tagline {
       font-family: 'Caveat', cursive;
       font-size: 2.4rem;
@@ -173,7 +172,7 @@
       margin-top: 4px;
     }
 
-    /* Frame Foto Polaroid */
+    /* Frame Foto Polaroid Interactive */
     .photo-gallery {
       display: flex;
       justify-content: center;
@@ -188,9 +187,15 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
       transform: rotate(-2.5deg);
       width: 120px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .polaroid:nth-child(2) {
       transform: rotate(3deg);
+    }
+    .polaroid:hover {
+      transform: scale(1.08) rotate(0deg);
+      box-shadow: 0 12px 25px rgba(144, 224, 239, 0.3);
     }
     .polaroid img {
       width: 100%;
@@ -198,6 +203,69 @@
       object-fit: cover;
       filter: sepia(0.1) contrast(1.05);
       border-radius: 2px;
+      display: block;
+    }
+
+    /* Modal Lightbox untuk Perbesar Foto */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(3, 7, 13, 0.88);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      padding: 20px;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-content {
+      background: #07111e;
+      padding: 12px 12px 24px 12px;
+      border-radius: 8px;
+      border: 1px solid #1f3a60;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 30px rgba(144, 224, 239, 0.2);
+      max-width: 90vw;
+      max-height: 80vh;
+      text-align: center;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .lightbox.active .lightbox-content {
+      transform: scale(1);
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 65vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #1d4ed8;
+      color: #fff;
+      border: 1px solid #60a5fa;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     /* Tombol Musik */
@@ -295,12 +363,12 @@
       <h1>600 Reasons</h1>
       <p class="subtitle">Why I Love You</p>
       
-      <!-- Tempat Foto Polaroid -->
+      <!-- Tempat Foto Polaroid (Bisa Dipencet) -->
       <div class="photo-gallery">
-        <div class="polaroid">
+        <div class="polaroid" onclick="zoomImage(this)">
           <img src="foto1.heic" alt="Film Photo 1" />
         </div>
-        <div class="polaroid">
+        <div class="polaroid" onclick="zoomImage(this)">
           <img src="foto2.heic" alt="Film Photo 2" />
         </div>
       </div>
@@ -320,6 +388,14 @@
       <div class="letter-body">
         "Aku masih bisa kasih lebih banyak alasan, tapi segini saja untuk sekarang. Aku harap kamu tau betapa aku cinta denganmu."
       </div>
+    </div>
+  </div>
+
+  <!-- Modal Pop-up Foto -->
+  <div class="lightbox" id="lightbox" onclick="closeZoom()">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeZoom()">&times;</button>
+      <img src="" alt="Zoomed Photo" id="lightboxImg" class="lightbox-img" />
     </div>
   </div>
 
@@ -398,6 +474,20 @@
         music.pause();
         btn.innerText = "TAP TO PLAY MUSIC 🎵";
       }
+    }
+
+    /* Fungsi Perbesar Foto */
+    function zoomImage(element) {
+      const img = element.querySelector("img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+
+      lightboxImg.src = img.src;
+      lightbox.classList.add("active");
+    }
+
+    function closeZoom() {
+      document.getElementById("lightbox").classList.remove("active");
     }
   </script>
 </body>
