@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>600 Reasons Why I Love You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,91 +12,134 @@
       padding: 0;
     }
     body {
-      background-color: #fce4ec;
-      background-image: radial-gradient(#f8bbd0 1px, transparent 0);
-      background-size: 20px 20px;
+      background-color: #f7e1e3;
       font-family: 'Poppins', sans-serif;
-      color: #4a3e3d;
+      color: #3a2223;
       display: flex;
       justify-content: center;
-      padding: 20px 10px;
+      padding: 20px 12px;
     }
     .container {
-      max-width: 500px;
+      max-width: 480px;
       width: 100%;
-      background: #fff0f3;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(216, 27, 96, 0.15);
-      border: 2px solid #f8bbd0;
+      background: #fff8f8;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(136, 14, 79, 0.2);
+      border: 3px solid #d81b60;
       overflow: hidden;
-      position: relative;
     }
+    
+    /* Header Style (Desain Amplop & Polaroid) */
     .header {
-      background: linear-gradient(135deg, #f8bbd0, #f48fb1);
-      padding: 30px 20px;
+      background: linear-gradient(135deg, #c2185b, #880e4f);
+      padding: 30px 20px 20px;
       text-align: center;
+      color: #ffffff;
+      border-bottom: 3px solid #880e4f;
       position: relative;
-      border-bottom: 2px dashed #ec407a;
     }
     .header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #880e4f;
-      margin-bottom: 5px;
+      font-size: 2.1rem;
+      letter-spacing: 1px;
+      color: #fff0f3;
+      margin-bottom: 4px;
     }
     .header p.subtitle {
       font-family: 'Dancing Script', cursive;
-      font-size: 1.4rem;
-      color: #ad1457;
+      font-size: 1.5rem;
+      color: #ffcdd2;
     }
+    
+    /* Container Foto Polaroid */
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0 10px;
+    }
+    .polaroid {
+      background: #ffffff;
+      padding: 6px 6px 16px 6px;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transform: rotate(-3deg);
+      width: 110px;
+    }
+    .polaroid:nth-child(2) {
+      transform: rotate(4deg);
+    }
+    .polaroid img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
     .music-btn {
       margin-top: 15px;
-      background: #ec407a;
-      color: white;
+      background: #ffffff;
+      color: #880e4f;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 25px;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(236, 64, 122, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       transition: all 0.2s ease;
     }
     .music-btn:hover {
-      background: #d81b60;
+      background: #ffebee;
       transform: scale(1.03);
     }
+
+    /* List Alasan */
     .reasons-list {
       padding: 25px 20px;
-      max-height: 70vh;
+      max-height: 65vh;
       overflow-y: auto;
+      background: #fff8f8;
     }
     .reason-item {
-      font-size: 0.92rem;
+      font-size: 0.93rem;
       line-height: 1.6;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed #f8bbd0;
-      color: #5d4037;
+      padding: 10px 0;
+      border-bottom: 1.5px solid #f8bbd0; /* Garis lurus solid */
+      color: #4a2c2d;
     }
     .reason-item strong {
-      color: #c2185b;
-      margin-right: 5px;
+      color: #ad1457;
+      margin-right: 6px;
     }
-    .footer-note {
+
+    /* Surat Penutup di Akhir */
+    .letter-section {
+      background: #fce4ec;
+      border-top: 2px solid #e91e63;
+      padding: 25px 20px;
       text-align: center;
-      padding: 20px;
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
-      color: #880e4f;
-      background: #f8bbd0;
     }
+    .letter-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #880e4f;
+      margin-bottom: 10px;
+    }
+    .letter-body {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #5c001e;
+    }
+
     /* Custom Scrollbar */
     .reasons-list::-webkit-scrollbar {
       width: 6px;
     }
     .reasons-list::-webkit-scrollbar-thumb {
-      background: #f48fb1;
+      background: #c2185b;
       border-radius: 10px;
     }
   </style>
@@ -105,26 +148,40 @@
 
   <div class="container">
     <div class="header">
+      <p class="subtitle">p.s. i love u</p>
       <h1>600 Reasons</h1>
       <p class="subtitle">Why I Love You</p>
-      <button class="music-btn" onclick="toggleMusic()">TAP TO PLAY MUSIC 🎵</button>
+      
+      <!-- Bagian Tempat Foto (Ganti src gambar di bawah) -->
+      <div class="photo-gallery">
+        <div class="polaroid">
+          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Foto 1" />
+        </div>
+        <div class="polaroid">
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=400" alt="Foto 2" />
+        </div>
+      </div>
+
+      <button class="music-btn" onclick="toggleMusic()">TAP THE BUTTON TO PLAY THE MUSIC 🎵</button>
       <audio id="bg-music" loop>
-        <!-- Ganti src di bawah dengan file audio MP3 pilihanmu -->
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
       </audio>
     </div>
 
-    <div class="reasons-list" id="reasonsContainer">
-      <!-- List alasan akan otomatis di-generate oleh JS -->
-    </div>
+    <!-- Container Alasan -->
+    <div class="reasons-list" id="reasonsContainer"></div>
 
-    <div class="footer-note">
-      And most importantly, I love you simply because you're you. ❤️
+    <!-- Surat Penutup -->
+    <div class="letter-section">
+      <div class="letter-title">A Little Note For You</div>
+      <div class="letter-body">
+        "Aku masih bisa kasih lebih banyak alasan, tapi segini saja untuk sekarang. Aku harap kamu tau betapa aku cinta denganmu." ❤️
+      </div>
     </div>
   </div>
 
   <script>
-    // Contoh template alasan dasar yang akan di-looping hingga 600
+    // Contoh kalimat alasan persis seperti di video & template romantis
     const baseReasons = [
       "I love you because you make me genuinely happy.",
       "I love the way you smile.",
@@ -145,12 +202,32 @@
       "I love how I can be myself around you.",
       "I love how safe I feel when I'm with you.",
       "I love your beautiful heart.",
-      "I love seeing your name on my notifications."
+      "I love seeing your name on my notifications.",
+      "I love every conversation we have.",
+      "I love your voice.",
+      "I love late-night talks with you.",
+      "I love taking pictures with you.",
+      "I love looking back at all our memories.",
+      "I love how far we've come together.",
+      "I love knowing that I have you by my side.",
+      "I love your kindness.",
+      "I love your cute little reactions.",
+      "I love your personality.",
+      "I love when you get excited about something.",
+      "I love when you're being silly.",
+      "I love how you randomly check on me.",
+      "I love every version of you.",
+      "I love when you tell me you miss me.",
+      "I love how honest you are with me.",
+      "I love how we can talk about almost anything.",
+      "I love having someone like you to share my life with.",
+      "I love how you make me feel important.",
+      "I love how you remind me that I'm not alone."
     ];
 
     const container = document.getElementById("reasonsContainer");
 
-    // Generate 600 alasan
+    // Generate tepat 600 alasan
     for (let i = 1; i <= 600; i++) {
       const reasonText = baseReasons[(i - 1) % baseReasons.length];
       const item = document.createElement("div");
@@ -159,7 +236,7 @@
       container.appendChild(item);
     }
 
-    // Fungsi Play/Pause Musik
+    // Toggle Musik
     function toggleMusic() {
       const music = document.getElementById("bg-music");
       const btn = document.querySelector(".music-btn");
@@ -168,7 +245,7 @@
         btn.innerText = "PAUSE MUSIC ⏸️";
       } else {
         music.pause();
-        btn.innerText = "TAP TO PLAY MUSIC 🎵";
+        btn.innerText = "TAP THE BUTTON TO PLAY THE MUSIC 🎵";
       }
     }
   </script>
