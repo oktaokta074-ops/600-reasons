@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>600 Reasons Why I Love You</title>
+  <title>100 Reasons Why I Love You</title>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -292,7 +292,7 @@
     /* List Alasan */
     .reasons-list {
       padding: 25px 22px;
-      max-height: 60vh;
+      max-height: 55vh;
       overflow-y: auto;
       background: #08101d;
     }
@@ -311,12 +311,12 @@
       letter-spacing: 1px;
     }
 
-    /* Surat Penutup */
+    /* Surat Penutup Dua Paragraf */
     .letter-section {
       background: linear-gradient(180deg, #0e2038 0%, #060e1a 100%);
       border-top: 1px solid #1f3a60;
-      padding: 30px 22px;
-      text-align: center;
+      padding: 35px 24px;
+      text-align: left;
     }
     .letter-title {
       font-family: 'Cinzel', serif;
@@ -324,14 +324,22 @@
       letter-spacing: 3px;
       color: #90e0ef;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 18px;
+      text-align: center;
     }
     .letter-body {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.15rem;
-      line-height: 1.8;
+      font-size: 1.12rem;
+      line-height: 1.85;
       color: #e0f2fe;
+    }
+    .letter-body p {
+      margin-bottom: 16px;
+      text-indent: 12px;
+    }
+    .letter-body p:last-child {
+      margin-bottom: 0;
     }
 
     /* Scrollbar */
@@ -350,7 +358,7 @@
   <div class="cover-overlay" id="coverOverlay">
     <div class="cover-card">
       <p class="tagline">p.s. i love u</p>
-      <h1>600 Reasons</h1>
+      <h1>100 Reasons</h1>
       <p class="subtitle">Why I Love You</p>
       <button class="open-btn" onclick="openLetter()">OPEN</button>
     </div>
@@ -360,10 +368,10 @@
   <div class="container" id="mainContainer">
     <div class="header">
       <p class="tagline">p.s. i love u</p>
-      <h1>600 Reasons</h1>
+      <h1>100 Reasons</h1>
       <p class="subtitle">Why I Love You</p>
       
-      <!-- Tempat Foto Polaroid (Bisa Dipencet) -->
+      <!-- Tempat Foto Polaroid -->
       <div class="photo-gallery">
         <div class="polaroid" onclick="zoomImage(this)">
           <img src="foto1.heic" alt="Film Photo 1" />
@@ -382,13 +390,12 @@
     <!-- Container Alasan -->
     <div class="reasons-list" id="reasonsContainer"></div>
 
-    <!-- Surat Penutup -->
+    <!-- Surat Penutup Dua Paragraf -->
     <div class="letter-section">
-      <div class="letter-title">A Lil Note For You</div>
+      <div class="letter-title">A Letter For You</div>
       <div class="letter-body">
-        "after writing all 600 reasons, i realized that no matter how many words i put together, they could never fully explain how much i love and adore you. there will always be another little thing about you that makes me fall for u all over again. thank u for being urself, for loving me, and for staying. out of all the people i could have met, im so grateful that i met you. i love you more than these 600 reasons could ever say, and ill keep finding new reasons to love you every single day, tamiii..
-
-600 may seem a lot(?), but ngl i could name sooooo many more sayangkuu. ill always choose u no matter what, even in another life."
+        <p>i also know that a hundred things probably sounds like a lot, but honestly it isn't. i could probably keep going if i wanted to. every time i think ive written everything, ill remember another random thing about u and go, "WAIT I LOVE THAT TOO." that's basically the problem with trying to put my love for you into a list AHAHAH..</p>
+        <p>there will always be another little thing about you that makes me fall for u all over again. thank u for being urself, for loving me, and for staying. out of all the people i could have met, im so grateful that i met you. i love you more than these 600 reasons could ever say, and ill keep finding new reasons to love you every single day, tamiii..</p>
       </div>
     </div>
   </div>
@@ -403,55 +410,115 @@
 
   <script>
     const baseReasons = [
-      "I love you because you make me genuinely happy.",
-      "I love the way you smile.",
-      "I love how your presence makes everything feel better.",
-      "I love how comfortable I am whenever I'm with you.",
-      "I love the way you care about me.",
-      "I love how you always make me feel loved.",
-      "I love your little habits, even the ones you don't notice.",
-      "I love listening to you talk about random things.",
-      "I love your laugh.",
-      "I love how you can make me smile without even trying.",
-      "I love how you understand me.",
-      "I love how patient you are with me.",
-      "I love how you remember the little things about me.",
-      "I love how you support me.",
-      "I love how you believe in me.",
-      "I love how you make ordinary days feel special.",
-      "I love how I can be myself around you.",
-      "I love how safe I feel when I'm with you.",
-      "I love your beautiful heart.",
-      "I love seeing your name on my notifications.",
-      "I love every conversation we have.",
-      "I love your voice.",
-      "I love late-night talks with you.",
-      "I love taking pictures with you.",
-      "I love looking back at all our memories.",
-      "I love how far we've come together.",
-      "I love knowing that I have you by my side.",
-      "I love your kindness.",
-      "I love your cute little reactions.",
-      "I love your personality.",
-      "I love when you get excited about something.",
-      "I love when you're being silly.",
-      "I love how you randomly check on me.",
-      "I love every version of you.",
-      "I love when you tell me you miss me.",
-      "I love how honest you are with me.",
-      "I love how we can talk about almost anything.",
-      "I love having someone like you to share my life with.",
-      "I love how you make me feel important.",
-      "I love how you remind me that I'm not alone."
+      "i love ur smile",
+      "i love ur voice",
+      "i love how u laugh",
+      "i loveee how absolutely cute u are",
+      "i love ur patience, apalagi pas ngejelasin hal yang aku ga ngerti",
+      "i love ur sarcastic remarks(walau kadang nyebelin hiksss)",
+      "i love the way u care about little things",
+      "i love the way u care ab me",
+      "i love how u can make me smile without even trying",
+      "i love ur humour",
+      "i love late night talks w u",
+      "i love taking pictures w u",
+      "i love ur personality",
+      "i love ur beautiful heart",
+      "i love it when u tell me u miss me",
+      "i love whenever u yap(cerita panjang lebar tentang sesuatu)",
+      "i love how u made me realize why artists are able to write love songs:)",
+      "i love you because ure the best thing that happened to me",
+      "i love ur beauty (which is beyond anything ive seen)",
+      "i love you whenever youre excited about little things",
+      "i love ur thoughtfulness",
+      "i love ur freakiness AHAHAHA",
+      "i love the way u look at me",
+      "i loveee spending time with u",
+      "i love how smart u are",
+      "i love hearing about ur day",
+      "i love ur awkwardness (or our awkwardness? xixixixi)",
+      "i love it whenever u tease me (mostly ketika kamu tau aku gi jealous. nyebelin sih but its okay, ure cute)",
+      "i love how unpredictable u are sometimes",
+      "i love seeing u happy sayangkuu",
+      "i love knowing that i can still learn something new ab u everyday",
+      "i love you for who u are, even the messy parts (thats what make u beautiful tho)",
+      "i love how u never(?) get tired of me ehehe",
+      "i love how u always make me feel appreciated",
+      "i love it whenever u call me “sayang”",
+      "i love how u can get vulnerable around me(vice versa)",
+      "i love how religious u are",
+      "i love di doain ma kamuu :D",
+      "i love being in ur prayers",
+      "i love how talented and passionate u are in things u like (paskib, osis, pmr, dll)",
+      "i love how ure so loveable(even if u dont know)",
+      "i love how ure worth the wait",
+      "i love how ure worth fighting for",
+      "i love ur attitude",
+      "id love to go through every problems in this life WITH YOU",
+      "i love whenever u spam me",
+      "i love how u dont give up on me",
+      "i love writing for you, about you.",
+      "i love how ure always in my mind",
+      "i love being kissed by you",
+      "i love how u always talk about pagan xixixixi",
+      "i love ur hair (short or long, u still look good anyway sayang)",
+      "i love ur patience w me, especially whenever im being ga peka, banyak nanya, dan lain lain (i know ive already said this di atas tuh)",
+      "i love how u inspire me (and probably everyone around you)",
+      "i love how u ngimbangin my texts gitu yaa, aku notice kayak kamu jadi lebih sering pake b ing xixixixi",
+      "i love how u make me wanna be better everyday, be better for you",
+      "i love how u make me want to choose you always",
+      "i love that out of all the paths in this universe, my steps somehow led me right to you.",
+      "i love ur music taste (karenaa mirip yeyeyey)",
+      "i love ur energetic side",
+      "i love it whenever u let me borrow ur sweater",
+      "i love ur scent (NOT IN A WEIRD WAY)",
+      "i love how u always ngingetin aku buat makan",
+      "i love whenever you remember little things about me",
+      "i love how ure the only person my eyes see in a crowded room",
+      "i love being on a call with you (even if we dont talk)",
+      "i love whenever we’re together even if we dont talk",
+      "i love when u hold my hand",
+      "i love it whenever kamu ngajak aku kemana mana (pergi ambil bekalmu, ke koperasi, etc)",
+      "i love you simply because loving you makes me feel closer to the best version of myself every single day",
+      "i love ur warm hugsssss",
+      "i love when u kabarin aku terus",
+      "i love when u send me a photo of urself",
+      "i love how u make me look forward to growing with you",
+      "i love you because in every universe, in every lifetime, my heart would still recognize yours.",
+      "i love how u make me feel so prioritized, no matter how busy your day is",
+      "i love how loving you feels like walking on Dhamma A.K.A a path of pure goodness (yeyy bahas Buddha lagi nih)",
+      "i love whenever u send me tiktok videos",
+      "i love whenever u wave hii to me",
+      "i love seeing your eyes light up whenever you talk about something you adore",
+      "i love the way u roll ur eyes whenever ure mad (in a bad mood, or hearing my bullshits wkakaksksk)",
+      "i love the way you love me",
+      "i love the way u say “bencikk” whenever ure jealous(?)",
+      "i love when u hug me pas aku gi nyetir motor",
+      "i love the way you make me wanna write you all of this",
+      "i love ur random messages",
+      "i love u because ure worth every flowers i could ever give to u",
+      "i love whenever u call me “adeo”",
+      "i love when u send me voice messages",
+      "i love your “sksksksks”",
+      "i love your “ahahaha”",
+      "i love your “wkwkkwkw”",
+      "i love your “xixixixi”",
+      "i love your cute emojis that u use whenever u send me a paragraph",
+      "i love ur handwriting",
+      "i love the way u always find a reason to annoy and argue w me AHAHAHA",
+      "i love whenever u touch my face",
+      "i love your hands (lentik banget hikss, so beautiful)",
+      "i love how brave and strong u are",
+      "i love the little things about you just as much as i love the big things."
     ];
 
     const container = document.getElementById("reasonsContainer");
 
-    for (let i = 1; i <= 600; i++) {
-      const reasonText = baseReasons[(i - 1) % baseReasons.length];
+    // Menampilkan murni 100 alasan tanpa pengulangan (looping)
+    for (let i = 0; i < baseReasons.length; i++) {
       const item = document.createElement("div");
       item.className = "reason-item";
-      item.innerHTML = `<strong>${i}.</strong> ${reasonText}`;
+      item.innerHTML = `<strong>${i + 1}.</strong> ${baseReasons[i]}`;
       container.appendChild(item);
     }
 
@@ -478,7 +545,6 @@
       }
     }
 
-    /* Fungsi Perbesar Foto */
     function zoomImage(element) {
       const img = element.querySelector("img");
       const lightbox = document.getElementById("lightbox");
