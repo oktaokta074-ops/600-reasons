@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P.S. I Love You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <title>600 Reasons Why I Love You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,168 +12,315 @@
       padding: 0;
     }
     body {
-      background-color: #d8d6d1;
-      font-family: 'Montserrat', sans-serif;
-      color: #111;
+      background-color: #120709;
+      background-image: radial-gradient(#38121a 1px, transparent 0);
+      background-size: 24px 24px;
+      font-family: 'Cormorant Garamond', serif;
+      color: #ebdcd5;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 16px;
+      padding: 24px 12px;
+      overflow-x: hidden;
     }
-
-    /* Full Cover Album Frame */
-    .album-cover-card {
-      max-width: 400px;
+    
+    /* Cover Screen */
+    .cover-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #120709;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+      padding: 20px;
+    }
+    
+    .cover-card {
+      max-width: 420px;
       width: 100%;
-      background: #e2e0db;
-      border-radius: 4px;
-      padding: 30px 24px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 1px solid #c4c2bd;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 480px;
-    }
-
-    /* Grid layout: Foto Kiri, Tulisan Vertikal Kanan */
-    .album-grid {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-
-    .left-container {
-      width: 48%;
+      background: linear-gradient(145deg, #2b0b14, #18060a);
+      border: 1px solid #5e182b;
+      border-radius: 16px;
+      padding: 40px 24px;
       text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(136, 14, 79, 0.25);
+      animation: float 4s ease-in-out infinite;
     }
 
-    .heart-doodle {
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Font 'Caveat' Kasual & Cute untuk p.s. i love u */
+    .cover-card p.tagline {
       font-family: 'Caveat', cursive;
-      font-size: 2.2rem;
-      line-height: 1;
-      margin-bottom: 4px;
+      font-size: 2.4rem;
+      color: #e6b89c;
+      margin-bottom: -5px;
+      text-transform: lowercase;
+      transform: rotate(-3deg);
       display: inline-block;
-      transform: rotate(-10deg);
     }
 
-    .album-photo {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.2);
-      border-radius: 2px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .right-container {
-      width: 48%;
-      text-align: left;
-      padding-left: 10px;
-    }
-
-    .marker-title {
-      font-family: 'Caveat', cursive;
-      font-size: 3.3rem;
-      line-height: 0.95;
-      color: #111;
-    }
-
-    .album-footer {
-      text-align: center;
-      margin-top: 25px;
-    }
-
-    .artist-name {
-      font-size: 0.75rem;
-      font-weight: 600;
+    .cover-card h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
       letter-spacing: 3px;
+      color: #f7e7e8;
       text-transform: uppercase;
-      color: #222;
-      margin-bottom: 18px;
+      margin-top: 10px;
+    }
+
+    .cover-card p.subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      color: #c97a8e;
+      text-transform: uppercase;
+      margin-top: 4px;
+      margin-bottom: 30px;
     }
 
     .open-btn {
-      background: #111;
-      color: #fff;
-      border: none;
-      padding: 10px 28px;
-      border-radius: 20px;
+      background: linear-gradient(135deg, #8c2841, #5e182b);
+      color: #f7e7e8;
+      border: 1px solid #c97a8e;
+      padding: 12px 36px;
+      border-radius: 30px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .open-btn:hover {
+      transform: scale(1.05);
+      background: #a83250;
+      box-shadow: 0 0 15px rgba(201, 122, 142, 0.4);
+    }
+
+    /* Container Utama */
+    .container {
+      max-width: 480px;
+      width: 100%;
+      background: #1c0a10;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(163, 31, 62, 0.2);
+      border: 1px solid #4a1525;
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+    }
+
+    .cover-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Header Bar */
+    .header {
+      background: linear-gradient(180deg, #380a18 0%, #1c0a10 100%);
+      padding: 35px 20px 25px;
+      text-align: center;
+      border-bottom: 1px solid #5e182b;
+      position: relative;
+    }
+
+    .header p.tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 2.4rem;
+      color: #e6b89c;
+      margin-bottom: -5px;
+      text-transform: lowercase;
+      transform: rotate(-3deg);
+      display: inline-block;
+    }
+
+    .header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      color: #f7e7e8;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      margin-top: 10px;
+    }
+
+    .header p.subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 4px;
+      color: #c97a8e;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Frame Foto Polaroid */
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 25px 0 15px;
+    }
+    .polaroid {
+      background: #120709;
+      padding: 8px 8px 18px 8px;
+      border-radius: 4px;
+      border: 1px solid #4a1525;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transform: rotate(-2.5deg);
+      width: 120px;
+    }
+    .polaroid:nth-child(2) {
+      transform: rotate(3deg);
+    }
+    .polaroid img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      filter: sepia(0.15) contrast(1.05);
+      border-radius: 2px;
+    }
+
+    /* Tombol Musik */
+    .music-btn {
+      margin-top: 18px;
+      background: transparent;
+      color: #e0b0b8;
+      border: 1px solid #8c2841;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .music-btn:hover {
+      background: #5e182b;
+      color: #fff;
+      border-color: #c97a8e;
     }
 
-    /* Section Alasan (Tersembunyi Awalnya) */
-    .reasons-wrapper {
-      display: none;
-      width: 100%;
-      max-width: 400px;
-      background: #e2e0db;
-      border-radius: 4px;
-      padding: 20px;
-      border: 1px solid #c4c2bd;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .reasons-title {
-      font-family: 'Caveat', cursive;
-      font-size: 2.2rem;
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
+    /* List Alasan */
     .reasons-list {
-      max-height: 50vh;
+      padding: 25px 22px;
+      max-height: 60vh;
       overflow-y: auto;
-      padding-right: 5px;
+      background: #19090f;
     }
-
     .reason-item {
-      font-size: 0.88rem;
-      line-height: 1.5;
-      padding: 8px 0;
-      border-bottom: 1px solid #ccc;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      padding: 12px 0;
+      border-bottom: 1px solid #33111b;
+      color: #ebdcd5;
+    }
+    .reason-item strong {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: #d4a373;
+      margin-right: 8px;
+      letter-spacing: 1px;
     }
 
-    .reason-item strong {
-      font-family: 'Caveat', cursive;
-      font-size: 1.2rem;
+    /* Surat Penutup */
+    .letter-section {
+      background: linear-gradient(180deg, #240b13 0%, #14050a 100%);
+      border-top: 1px solid #4a1525;
+      padding: 30px 22px;
+      text-align: center;
+    }
+    .letter-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #d4a373;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .letter-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #f7e7e8;
+    }
+
+    /* Scrollbar */
+    .reasons-list::-webkit-scrollbar {
+      width: 5px;
+    }
+    .reasons-list::-webkit-scrollbar-thumb {
+      background: #5e182b;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Tampilan Cover Album -->
-  <div class="album-cover-card" id="albumCover">
-    <div class="album-grid">
-      <div class="left-container">
-        <div class="heart-doodle">🖤</div>
-        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Cover Photo" class="album-photo" />
-      </div>
-      <div class="right-container">
-        <div class="marker-title">
-          P.S.<br>
-          I<br>
-          LOVE<br>
-          YOU
-        </div>
-      </div>
-    </div>
-
-    <div class="album-footer">
-      <div class="artist-name">PAUL PARTOHAP</div>
-      <button class="open-btn" onclick="showReasons()">OPEN 600 REASONS</button>
+  <!-- Halaman Cover Depan -->
+  <div class="cover-overlay" id="coverOverlay">
+    <div class="cover-card">
+      <p class="tagline">p.s. i love u</p>
+      <h1>600 Reasons</h1>
+      <p class="subtitle">Why I Love You</p>
+      <button class="open-btn" onclick="openLetter()">OPEN</button>
     </div>
   </div>
 
-  <!-- Tampilan Alasan -->
-  <div class="reasons-wrapper" id="reasonsSection">
-    <div class="reasons-title">p.s. i love you 🖤</div>
+  <!-- Halaman Utama Web -->
+  <div class="container" id="mainContainer">
+    <div class="header">
+      <p class="tagline">p.s. i love u</p>
+      <h1>600 Reasons</h1>
+      <p class="subtitle">Why I Love You</p>
+      
+      <!-- Tempat Foto Polaroid -->
+      <div class="photo-gallery">
+        <div class="polaroid">
+          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Film Photo 1" />
+        </div>
+        <div class="polaroid">
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=400" alt="Film Photo 2" />
+        </div>
+      </div>
+
+      <button class="music-btn" onclick="toggleMusic()">TAP TO PAUSE MUSIC ⏸️</button>
+      <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <!-- Container Alasan -->
     <div class="reasons-list" id="reasonsContainer"></div>
+
+    <!-- Surat Penutup -->
+    <div class="letter-section">
+      <div class="letter-title">A Letter For You</div>
+      <div class="letter-body">
+        "Aku masih bisa kasih lebih banyak alasan, tapi segini saja untuk sekarang. Aku harap kamu tau betapa aku cinta denganmu."
+      </div>
+    </div>
   </div>
 
   <script>
@@ -189,7 +336,35 @@
       "I love your laugh.",
       "I love how you can make me smile without even trying.",
       "I love how you understand me.",
-      "I love how patient you are with me."
+      "I love how patient you are with me.",
+      "I love how you remember the little things about me.",
+      "I love how you support me.",
+      "I love how you believe in me.",
+      "I love how you make ordinary days feel special.",
+      "I love how I can be myself around you.",
+      "I love how safe I feel when I'm with you.",
+      "I love your beautiful heart.",
+      "I love seeing your name on my notifications.",
+      "I love every conversation we have.",
+      "I love your voice.",
+      "I love late-night talks with you.",
+      "I love taking pictures with you.",
+      "I love looking back at all our memories.",
+      "I love how far we've come together.",
+      "I love knowing that I have you by my side.",
+      "I love your kindness.",
+      "I love your cute little reactions.",
+      "I love your personality.",
+      "I love when you get excited about something.",
+      "I love when you're being silly.",
+      "I love how you randomly check on me.",
+      "I love every version of you.",
+      "I love when you tell me you miss me.",
+      "I love how honest you are with me.",
+      "I love how we can talk about almost anything.",
+      "I love having someone like you to share my life with.",
+      "I love how you make me feel important.",
+      "I love how you remind me that I'm not alone."
     ];
 
     const container = document.getElementById("reasonsContainer");
@@ -202,9 +377,27 @@
       container.appendChild(item);
     }
 
-    function showReasons() {
-      document.getElementById("albumCover").style.display = "none";
-      document.getElementById("reasonsSection").style.display = "block";
+    function openLetter() {
+      const cover = document.getElementById("coverOverlay");
+      const main = document.getElementById("mainContainer");
+      const music = document.getElementById("bg-music");
+
+      cover.classList.add("hidden");
+      main.classList.add("visible");
+      
+      music.play().catch(() => {});
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      const btn = document.querySelector(".music-btn");
+      if (music.paused) {
+        music.play();
+        btn.innerText = "TAP TO PAUSE MUSIC ⏸️";
+      } else {
+        music.pause();
+        btn.innerText = "TAP TO PLAY MUSIC 🎵";
+      }
     }
   </script>
 </body>
