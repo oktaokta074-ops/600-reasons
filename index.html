@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>600 Reasons Why I Love You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,134 +12,168 @@
       padding: 0;
     }
     body {
-      background-color: #f7e1e3;
-      font-family: 'Poppins', sans-serif;
-      color: #3a2223;
+      background-color: #120709;
+      background-image: radial-gradient(#38121a 1px, transparent 0);
+      background-size: 24px 24px;
+      font-family: 'Cormorant Garamond', serif;
+      color: #ebdcd5;
       display: flex;
       justify-content: center;
-      padding: 20px 12px;
+      padding: 24px 12px;
     }
+    
     .container {
       max-width: 480px;
       width: 100%;
-      background: #fff8f8;
-      border-radius: 16px;
-      box-shadow: 0 12px 35px rgba(136, 14, 79, 0.2);
-      border: 3px solid #d81b60;
+      background: #1c0a10;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(163, 31, 62, 0.2);
+      border: 1px solid #4a1525;
       overflow: hidden;
-    }
-    
-    /* Header Style (Desain Amplop & Polaroid) */
-    .header {
-      background: linear-gradient(135deg, #c2185b, #880e4f);
-      padding: 30px 20px 20px;
-      text-align: center;
-      color: #ffffff;
-      border-bottom: 3px solid #880e4f;
       position: relative;
     }
+
+    /* Cinematic Header Bar */
+    .header {
+      background: linear-gradient(180deg, #380a18 0%, #1c0a10 100%);
+      padding: 35px 20px 25px;
+      text-align: center;
+      border-bottom: 1px solid #5e182b;
+      position: relative;
+    }
+
+    /* Subtitle 'p.s. i love u' */
+    .header p.tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      color: #d4a373;
+      margin-bottom: 6px;
+      text-transform: lowercase;
+    }
+
+    /* Judul Utama Cinematic */
     .header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.1rem;
-      letter-spacing: 1px;
-      color: #fff0f3;
-      margin-bottom: 4px;
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      color: #f7e7e8;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
+
     .header p.subtitle {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
-      color: #ffcdd2;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 4px;
+      color: #c97a8e;
+      text-transform: uppercase;
+      margin-top: 4px;
     }
-    
-    /* Container Foto Polaroid */
+
+    /* Frame Foto Polaroid Cinematic */
     .photo-gallery {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin: 20px 0 10px;
+      gap: 16px;
+      margin: 25px 0 15px;
     }
     .polaroid {
-      background: #ffffff;
-      padding: 6px 6px 16px 6px;
+      background: #120709;
+      padding: 8px 8px 18px 8px;
       border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transform: rotate(-3deg);
-      width: 110px;
+      border: 1px solid #4a1525;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transform: rotate(-2.5deg);
+      width: 120px;
+      transition: transform 0.3s ease;
     }
     .polaroid:nth-child(2) {
-      transform: rotate(4deg);
+      transform: rotate(3deg);
     }
     .polaroid img {
       width: 100%;
-      height: 100px;
+      height: 110px;
       object-fit: cover;
+      filter: sepia(0.15) contrast(1.05);
       border-radius: 2px;
     }
 
+    /* Tombol Musik Style Film Minimalis */
     .music-btn {
-      margin-top: 15px;
-      background: #ffffff;
-      color: #880e4f;
-      border: none;
+      margin-top: 18px;
+      background: transparent;
+      color: #e0b0b8;
+      border: 1px solid #8c2841;
       padding: 10px 22px;
-      border-radius: 25px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
     }
     .music-btn:hover {
-      background: #ffebee;
-      transform: scale(1.03);
+      background: #5e182b;
+      color: #fff;
+      border-color: #c97a8e;
+      box-shadow: 0 0 12px rgba(201, 122, 142, 0.3);
     }
 
     /* List Alasan */
     .reasons-list {
-      padding: 25px 20px;
-      max-height: 65vh;
+      padding: 25px 22px;
+      max-height: 62vh;
       overflow-y: auto;
-      background: #fff8f8;
+      background: #19090f;
     }
     .reason-item {
-      font-size: 0.93rem;
-      line-height: 1.6;
-      padding: 10px 0;
-      border-bottom: 1.5px solid #f8bbd0; /* Garis lurus solid */
-      color: #4a2c2d;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      padding: 12px 0;
+      border-bottom: 1px solid #33111b; /* Garis lurus pekat solid */
+      color: #ebdcd5;
     }
     .reason-item strong {
-      color: #ad1457;
-      margin-right: 6px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: #d4a373;
+      margin-right: 8px;
+      letter-spacing: 1px;
     }
 
-    /* Surat Penutup di Akhir */
+    /* Surat Penutup Cinematic */
     .letter-section {
-      background: #fce4ec;
-      border-top: 2px solid #e91e63;
-      padding: 25px 20px;
+      background: linear-gradient(180deg, #240b13 0%, #14050a 100%);
+      border-top: 1px solid #4a1525;
+      padding: 30px 22px;
       text-align: center;
     }
     .letter-title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.6rem;
-      color: #880e4f;
-      margin-bottom: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #d4a373;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
     .letter-body {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #5c001e;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #f7e7e8;
     }
 
-    /* Custom Scrollbar */
+    /* Scrollbar */
     .reasons-list::-webkit-scrollbar {
-      width: 6px;
+      width: 5px;
     }
     .reasons-list::-webkit-scrollbar-thumb {
-      background: #c2185b;
+      background: #5e182b;
       border-radius: 10px;
     }
   </style>
@@ -148,21 +182,21 @@
 
   <div class="container">
     <div class="header">
-      <p class="subtitle">p.s. i love u</p>
+      <p class="tagline">p.s. i love u</p>
       <h1>600 Reasons</h1>
       <p class="subtitle">Why I Love You</p>
       
-      <!-- Bagian Tempat Foto (Ganti src gambar di bawah) -->
+      <!-- Tempat Foto Polaroid (Ganti src gambar di bawah dengan foto kalian) -->
       <div class="photo-gallery">
         <div class="polaroid">
-          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Foto 1" />
+          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Film Photo 1" />
         </div>
         <div class="polaroid">
-          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=400" alt="Foto 2" />
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=400" alt="Film Photo 2" />
         </div>
       </div>
 
-      <button class="music-btn" onclick="toggleMusic()">TAP THE BUTTON TO PLAY THE MUSIC 🎵</button>
+      <button class="music-btn" onclick="toggleMusic()">TAP TO PLAY MUSIC 🎵</button>
       <audio id="bg-music" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
       </audio>
@@ -173,15 +207,14 @@
 
     <!-- Surat Penutup -->
     <div class="letter-section">
-      <div class="letter-title">A Little Note For You</div>
+      <div class="letter-title">A Letter For You</div>
       <div class="letter-body">
-        "Aku masih bisa kasih lebih banyak alasan, tapi segini saja untuk sekarang. Aku harap kamu tau betapa aku cinta denganmu." ❤️
+        "Aku masih bisa kasih lebih banyak alasan, tapi segini saja untuk sekarang. Aku harap kamu tau betapa aku cinta denganmu."
       </div>
     </div>
   </div>
 
   <script>
-    // Contoh kalimat alasan persis seperti di video & template romantis
     const baseReasons = [
       "I love you because you make me genuinely happy.",
       "I love the way you smile.",
@@ -227,7 +260,7 @@
 
     const container = document.getElementById("reasonsContainer");
 
-    // Generate tepat 600 alasan
+    // Generate 600 Alasan
     for (let i = 1; i <= 600; i++) {
       const reasonText = baseReasons[(i - 1) % baseReasons.length];
       const item = document.createElement("div");
@@ -236,7 +269,7 @@
       container.appendChild(item);
     }
 
-    // Toggle Musik
+    // Toggle Music Player
     function toggleMusic() {
       const music = document.getElementById("bg-music");
       const btn = document.querySelector(".music-btn");
@@ -245,7 +278,7 @@
         btn.innerText = "PAUSE MUSIC ⏸️";
       } else {
         music.pause();
-        btn.innerText = "TAP THE BUTTON TO PLAY THE MUSIC 🎵";
+        btn.innerText = "TAP TO PLAY MUSIC 🎵";
       }
     }
   </script>
