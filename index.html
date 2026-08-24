@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P.S. I Love You - 600 Reasons</title>
-  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <title>P.S. I Love You - Paul Partohap Aesthetic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -12,109 +12,139 @@
       padding: 0;
     }
     body {
-      background-color: #dedcd8;
-      background-image: radial-gradient(#bcba35 0.5px, transparent 0.5px), radial-gradient(#111111 0.5px, #dedcd8 0.5px);
-      background-size: 20px 20px;
-      background-position: 0 0, 10px 10px;
+      background-color: #dcdad5;
       font-family: 'Montserrat', sans-serif;
-      color: #1a1a1a;
+      color: #111;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 24px 12px;
+      padding: 16px;
       overflow-x: hidden;
     }
-    
-    /* Cover Screen (Album Aesthetic) */
+
+    /* Full Cover Overlay ala Album Cover */
     .cover-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: #e8e6e1;
+      background: #e2e0db;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 999;
       transition: opacity 0.8s ease, visibility 0.8s ease;
-      padding: 20px;
+      padding: 16px;
     }
-    
-    .cover-card {
-      max-width: 380px;
+
+    /* Card Album Square / Vertical Ratio */
+    .album-cover-card {
+      max-width: 420px;
       width: 100%;
-      background: #f7f6f2;
-      border: 1px solid #d0ceca;
-      border-radius: 8px;
-      padding: 45px 30px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      animation: float 4s ease-in-out infinite;
+      background: #eeece7;
+      border-radius: 4px;
+      padding: 30px 24px 20px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
       position: relative;
+      border: 1px solid #d0ceca;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 480px;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+    /* Grid Layout: Foto Kiri, Tulisan Kanan (Mirip Cover Album Asli) */
+    .album-grid {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 10px;
     }
 
-    /* Handwritten Title ala Paul Partohap Cover */
-    .album-title-box {
-      font-family: 'Gochi Hand', cursive;
-      font-size: 3rem;
-      line-height: 1.1;
-      color: #1a1a1a;
-      margin-bottom: 25px;
+    .left-photo-container {
+      width: 48%;
+      position: relative;
       text-align: center;
     }
 
     .heart-doodle {
-      font-size: 1.8rem;
-      display: block;
-      margin-bottom: 8px;
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 2px;
+      display: inline-block;
       transform: rotate(-10deg);
     }
 
-    .cover-card p.subtitle {
-      font-size: 0.8rem;
+    .album-photo {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.15) brightness(0.95);
+      border-radius: 2px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Tulisan Vertikal Spidol Hitam */
+    .right-title-container {
+      width: 48%;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .marker-title {
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      line-height: 0.95;
+      color: #111;
+      letter-spacing: 1px;
+    }
+
+    /* Footer Cover & Button */
+    .album-footer {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .artist-name {
+      font-size: 0.75rem;
+      font-weight: 600;
       letter-spacing: 3px;
-      color: #666;
       text-transform: uppercase;
-      margin-bottom: 30px;
+      color: #222;
+      margin-bottom: 18px;
     }
 
     .open-btn {
-      background: #1a1a1a;
-      color: #f7f6f2;
+      background: #111;
+      color: #fff;
       border: none;
-      padding: 12px 36px;
-      border-radius: 30px;
+      padding: 10px 28px;
+      border-radius: 20px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 3px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease;
     }
 
     .open-btn:hover {
-      transform: scale(1.05);
       background: #333;
+      transform: translateY(-2px);
     }
 
-    /* Container Utama */
+    /* Main App Container */
     .container {
-      max-width: 450px;
+      max-width: 440px;
       width: 100%;
-      background: #f7f6f2;
-      border-radius: 8px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      background: #eeece7;
+      border-radius: 6px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
       border: 1px solid #d0ceca;
       overflow: hidden;
-      position: relative;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
@@ -130,153 +160,138 @@
       transform: translateY(0);
     }
 
-    /* Header Bar */
+    /* Header Main App */
     .header {
-      background: #f0eee8;
-      padding: 35px 20px 25px;
+      padding: 30px 20px 20px;
       text-align: center;
-      border-bottom: 1px solid #e0ded8;
-      position: relative;
+      border-bottom: 1px solid #dcd9d2;
     }
 
-    /* Frame Foto Grayscale Polaroid */
-    .photo-gallery {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin: 20px 0 15px;
-    }
-    .polaroid {
-      background: #ffffff;
-      padding: 8px 8px 20px 8px;
-      border-radius: 2px;
-      border: 1px solid #e0e0e0;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
-      transform: rotate(-2deg);
-      width: 125px;
-    }
-    .polaroid:nth-child(2) {
-      transform: rotate(2.5deg);
-    }
-    .polaroid img {
-      width: 100%;
-      height: 110px;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.1); /* Effect Hitam Putih Klasik */
+    .header-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 12px;
     }
 
-    /* Tombol Musik Minimalis */
     .music-btn {
-      margin-top: 15px;
       background: transparent;
-      color: #333;
-      border: 1px solid #1a1a1a;
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
+      color: #111;
+      border: 1px solid #111;
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-size: 0.68rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
+      margin-top: 10px;
       transition: all 0.3s ease;
     }
+
     .music-btn:hover {
-      background: #1a1a1a;
+      background: #111;
       color: #fff;
     }
 
-    /* List Alasan */
+    /* Reasons List */
     .reasons-list {
-      padding: 25px 25px;
+      padding: 20px;
       max-height: 55vh;
       overflow-y: auto;
-      background: #f7f6f2;
-    }
-    .reason-item {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      padding: 12px 0;
-      border-bottom: 1px solid #e8e6e1;
-      color: #2b2b2b;
-    }
-    .reason-item strong {
-      font-family: 'Gochi Hand', cursive;
-      font-size: 1.2rem;
-      color: #1a1a1a;
-      margin-right: 8px;
+      background: #eeece7;
     }
 
-    /* Surat Penutup */
+    .reason-item {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0ddd6;
+      color: #222;
+    }
+
+    .reason-item strong {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      color: #000;
+      margin-right: 6px;
+    }
+
+    /* Letter Section */
     .letter-section {
-      background: #eeece6;
-      border-top: 1px solid #e0ded8;
-      padding: 25px 22px;
+      background: #e4e2dc;
+      border-top: 1px solid #d0ceca;
+      padding: 24px 20px;
       text-align: center;
     }
+
     .letter-title {
-      font-family: 'Gochi Hand', cursive;
-      font-size: 1.5rem;
-      color: #1a1a1a;
-      margin-bottom: 8px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
     }
+
     .letter-body {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       line-height: 1.6;
       color: #444;
       font-style: italic;
     }
 
-    /* Scrollbar Minimalis */
+    /* Custom Scrollbar */
     .reasons-list::-webkit-scrollbar {
       width: 4px;
     }
     .reasons-list::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 10px;
+      background: #bbb;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Halaman Cover Depan -->
+  <!-- Cover Depan (Layout Mirip Album Paul Partohap) -->
   <div class="cover-overlay" id="coverOverlay">
-    <div class="cover-card">
-      <div class="album-title-box">
-        <span class="heart-doodle">🖤</span>
-        P.S.<br>I<br>LOVE<br>YOU
+    <div class="album-cover-card">
+      <div class="album-grid">
+        <!-- Kiri: Doodle Heart + Foto Grayscale Vertikal -->
+        <div class="left-photo-container">
+          <div class="heart-doodle">🖤</div>
+          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Cover Photo" class="album-photo" />
+        </div>
+
+        <!-- Kanan: Tulisan Vertikal Spidol -->
+        <div class="right-title-container">
+          <div class="marker-title">
+            P.S.<br>
+            I<br>
+            LOVE<br>
+            YOU
+          </div>
+        </div>
       </div>
-      <p class="subtitle">600 Reasons Why</p>
-      <button class="open-btn" onclick="openLetter()">OPEN</button>
+
+      <!-- Footer Kredit & Tombol Buka -->
+      <div class="album-footer">
+        <div class="artist-name">PAUL PARTOHAP</div>
+        <button class="open-btn" onclick="openLetter()">OPEN 600 REASONS</button>
+      </div>
     </div>
   </div>
 
-  <!-- Halaman Utama Web -->
+  <!-- Halaman Utama -->
   <div class="container" id="mainContainer">
     <div class="header">
-      <div class="album-title-box" style="font-size: 2.2rem; margin-bottom: 10px;">
-        P.S. I LOVE YOU
-      </div>
-      
-      <!-- Tempat Foto Polaroid Grayscale -->
-      <div class="photo-gallery">
-        <div class="polaroid">
-          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Film Photo 1" />
-        </div>
-        <div class="polaroid">
-          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=400" alt="Film Photo 2" />
-        </div>
-      </div>
-
+      <div class="header-title">p.s. i love you 🖤</div>
       <button class="music-btn" onclick="toggleMusic()">TAP TO PAUSE MUSIC ⏸️</button>
       <audio id="bg-music" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
       </audio>
     </div>
 
-    <!-- Container Alasan -->
+    <!-- Container 600 Alasan -->
     <div class="reasons-list" id="reasonsContainer"></div>
 
-    <!-- Surat Penutup -->
+    <!-- Penutup -->
     <div class="letter-section">
       <div class="letter-title">A Letter For You</div>
       <div class="letter-body">
