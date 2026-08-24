@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>600 Reasons Why I Love You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -25,7 +25,7 @@
       overflow-x: hidden;
     }
     
-    /* Cover / Envelope Screen */
+    /* Cover Screen */
     .cover-overlay {
       position: fixed;
       top: 0;
@@ -58,14 +58,12 @@
       50% { transform: translateY(-8px); }
     }
 
-    /* Font Baru Montserrat Clean untuk p.s. i love u */
+    /* Font Pinyon Script untuk p.s. i love u */
     .cover-card p.tagline {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      letter-spacing: 4px;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 2.2rem;
       color: #e6b89c;
-      margin-bottom: 12px;
+      margin-bottom: 2px;
       text-transform: lowercase;
     }
 
@@ -133,7 +131,7 @@
       transform: translateY(0);
     }
 
-    /* Cinematic Header Bar */
+    /* Header */
     .header {
       background: linear-gradient(180deg, #380a18 0%, #1c0a10 100%);
       padding: 35px 20px 25px;
@@ -143,12 +141,10 @@
     }
 
     .header p.tagline {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: 0.92rem;
-      letter-spacing: 4px;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 2.2rem;
       color: #e6b89c;
-      margin-bottom: 8px;
+      margin-bottom: 2px;
       text-transform: lowercase;
     }
 
@@ -376,7 +372,7 @@
       container.appendChild(item);
     }
 
-    // Transisi Buka Cover
+    // Transisi Cover
     function openLetter() {
       const cover = document.getElementById("coverOverlay");
       const main = document.getElementById("mainContainer");
