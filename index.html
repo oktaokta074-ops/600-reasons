@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>600 Reasons Why I Love You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #fce4ec;
+      background-image: radial-gradient(#f8bbd0 1px, transparent 0);
+      background-size: 20px 20px;
+      font-family: 'Poppins', sans-serif;
+      color: #4a3e3d;
+      display: flex;
+      justify-content: center;
+      padding: 20px 10px;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: #fff0f3;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(216, 27, 96, 0.15);
+      border: 2px solid #f8bbd0;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 2px dashed #ec407a;
+    }
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #880e4f;
+      margin-bottom: 5px;
+    }
+    .header p.subtitle {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.4rem;
+      color: #ad1457;
+    }
+    .music-btn {
+      margin-top: 15px;
+      background: #ec407a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(236, 64, 122, 0.3);
+      transition: all 0.2s ease;
+    }
+    .music-btn:hover {
+      background: #d81b60;
+      transform: scale(1.03);
+    }
+    .reasons-list {
+      padding: 25px 20px;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+    .reason-item {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #f8bbd0;
+      color: #5d4037;
+    }
+    .reason-item strong {
+      color: #c2185b;
+      margin-right: 5px;
+    }
+    .footer-note {
+      text-align: center;
+      padding: 20px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: #880e4f;
+      background: #f8bbd0;
+    }
+    /* Custom Scrollbar */
+    .reasons-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .reasons-list::-webkit-scrollbar-thumb {
+      background: #f48fb1;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>600 Reasons</h1>
+      <p class="subtitle">Why I Love You</p>
+      <button class="music-btn" onclick="toggleMusic()">TAP TO PLAY MUSIC 🎵</button>
+      <audio id="bg-music" loop>
+        <!-- Ganti src di bawah dengan file audio MP3 pilihanmu -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <div class="reasons-list" id="reasonsContainer">
+      <!-- List alasan akan otomatis di-generate oleh JS -->
+    </div>
+
+    <div class="footer-note">
+      And most importantly, I love you simply because you're you. ❤️
+    </div>
+  </div>
+
+  <script>
+    // Contoh template alasan dasar yang akan di-looping hingga 600
+    const baseReasons = [
+      "I love you because you make me genuinely happy.",
+      "I love the way you smile.",
+      "I love how your presence makes everything feel better.",
+      "I love how comfortable I am whenever I'm with you.",
+      "I love the way you care about me.",
+      "I love how you always make me feel loved.",
+      "I love your little habits, even the ones you don't notice.",
+      "I love listening to you talk about random things.",
+      "I love your laugh.",
+      "I love how you can make me smile without even trying.",
+      "I love how you understand me.",
+      "I love how patient you are with me.",
+      "I love how you remember the little things about me.",
+      "I love how you support me.",
+      "I love how you believe in me.",
+      "I love how you make ordinary days feel special.",
+      "I love how I can be myself around you.",
+      "I love how safe I feel when I'm with you.",
+      "I love your beautiful heart.",
+      "I love seeing your name on my notifications."
+    ];
+
+    const container = document.getElementById("reasonsContainer");
+
+    // Generate 600 alasan
+    for (let i = 1; i <= 600; i++) {
+      const reasonText = baseReasons[(i - 1) % baseReasons.length];
+      const item = document.createElement("div");
+      item.className = "reason-item";
+      item.innerHTML = `<strong>${i}.</strong> ${reasonText}`;
+      container.appendChild(item);
+    }
+
+    // Fungsi Play/Pause Musik
+    function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      const btn = document.querySelector(".music-btn");
+      if (music.paused) {
+        music.play();
+        btn.innerText = "PAUSE MUSIC ⏸️";
+      } else {
+        music.pause();
+        btn.innerText = "TAP TO PLAY MUSIC 🎵";
+      }
+    }
+  </script>
+</body>
+</html>
